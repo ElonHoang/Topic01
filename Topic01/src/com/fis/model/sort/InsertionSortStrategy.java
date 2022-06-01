@@ -1,6 +1,6 @@
 package com.fis.model.sort;
 
-import com.fis.dao.ISortStrategy;
+import com.fis.dao.sortDAO.ISortStrategy;
 
 public class InsertionSortStrategy implements ISortStrategy {
     @Override
