@@ -1,7 +1,6 @@
 package com.fis.dao.detective;
 
-import com.fis.module.criminalCase.CriminalCase;
-import com.fis.module.detective.Detective;
+import com.fis.module.Detective;
 
 import java.util.List;
 
