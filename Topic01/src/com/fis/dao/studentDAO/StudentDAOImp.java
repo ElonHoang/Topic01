@@ -1,7 +1,5 @@
 package com.fis.dao.studentDAO;
 
-import com.fis.dao.sortDAO.ISortStrategy;
-import com.fis.model.sort.SelectionSortStrategy;
 import com.fis.model.student.Student;
 
 import java.util.ArrayList;
