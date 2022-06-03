@@ -71,12 +71,13 @@ public class LopHoc {
         //Tra ve danh sach 10 sinh vien co diem trung binh lon nhat lop
         //...
 
-//        Comparator<SinhVien> maxcomparator = Comparator.comparingDouble(t->t.tinhDiemTrungBinh());
-//        List<SinhVien> rs = dsLop.stream()
-//                .max(maxcomparator)
-//                .limit(10)
-//                .collect(Collectors.toList());
-//        return rs;
+        Comparator<SinhVien> maxcomparator = Comparator.comparingDouble(t->t.tinhDiemTrungBinh());
+        List<SinhVien> rs = dsLop.stream()
+                .sorted(maxcomparator.reversed())
+                .limit(10)
+                .collect(Collectors.toList())
+                ;
+        return rs;
     }
 
     //TODO Cau 6
