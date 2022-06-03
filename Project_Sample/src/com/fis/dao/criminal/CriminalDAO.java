@@ -1,6 +1,6 @@
 package com.fis.dao.criminal;
 
-import com.fis.module.CriminalCase;
+import com.fis.model.CriminalCase;
 
 import java.util.List;
 

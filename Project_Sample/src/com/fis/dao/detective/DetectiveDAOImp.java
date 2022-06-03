@@ -1,6 +1,6 @@
 package com.fis.dao.detective;
 
-import com.fis.module.Detective;
+import com.fis.model.Detective;
 
 import java.util.List;
 
