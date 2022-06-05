@@ -15,6 +15,9 @@ public class Detective {
     private Set<CriminalCase> criminalCase;
     private Set<TrackEntry> trackEntries;
 
+    public Detective() {
+    }
+
     public Detective(Person person, String badgeNumber, Rank rank, boolean armed, EmployeeStatus status, Set<CriminalCase> criminalCase, Set<TrackEntry> trackEntries) {
         this.person = person;
         this.badgeNumber = badgeNumber;
