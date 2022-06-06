@@ -1,6 +1,6 @@
 package com.fis.dao.evidence;
 
-import com.fis.model.Evidence;
+import com.fis.core.model.Evidence;
 
 import java.util.ArrayList;
 import java.util.List;

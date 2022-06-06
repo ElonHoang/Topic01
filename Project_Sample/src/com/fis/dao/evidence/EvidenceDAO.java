@@ -1,6 +1,5 @@
 package com.fis.dao.evidence;
-import com.fis.model.CriminalCase;
-import com.fis.model.Evidence;
+import com.fis.core.model.Evidence;
 
 import java.util.List;
 
