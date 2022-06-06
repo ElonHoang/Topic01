@@ -19,21 +19,24 @@ public class EvidenceDAOImp implements  EvidenceDAO{
 
     @Override
     public Evidence update(Evidence o) {
-        Evidence e = new Evidence();
-        if(e.getCriminalCase().equals(o.getCriminalCase())){
-            o.setStorage(e.getStorage());
-            o.setNumber(e.getNumber());
-            o.setItemName(e.getItemName());
-            o.setNotes(e.getNotes());
-            o.setArchired(e.isArchired());
-            o.setTrackEntry(e.getTrackEntry());
+        for(Evidence e : evidenceList){
+            if(e.getId() == o.getId()){
+                o.setCriminalCase(e.getCriminalCase());
+                o.setStorage(e.getStorage());
+                o.setNumber(e.getNumber());
+                o.setItemName(e.getItemName());
+                o.setNotes(e.getNotes());
+                o.setArchired(e.isArchired());
+                o.setTrackEntry(e.getTrackEntry());
+            }
         }
+
         return o;
 
     }
 
     @Override
-    public void delete(Evidence code) {
-    evidenceList.removeIf(t->t.getCriminalCase().equals(code.getCriminalCase()));
+    public void delete(Long code) {
+    evidenceList.removeIf(t->t.getId() == code);
     }
 }

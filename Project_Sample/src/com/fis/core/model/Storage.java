@@ -3,7 +3,7 @@ package com.fis.core.model;
 import java.util.Objects;
 import java.util.Set;
 
-public class Storage {
+public class Storage extends AbstractEntity {
     private String name;
     private String location;
     private Set<Evidence> evidence;
@@ -11,7 +11,8 @@ public class Storage {
 
     }
 
-    public Storage(String name, String location, Set<Evidence> evidence) {
+    public Storage(Long id, int verion,String name, String location, Set<Evidence> evidence) {
+        super(id,verion);
         this.name = name;
         this.location = location;
         this.evidence = evidence;

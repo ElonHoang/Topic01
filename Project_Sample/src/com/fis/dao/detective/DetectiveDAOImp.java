@@ -19,20 +19,23 @@ public class DetectiveDAOImp implements DetectiveDAO{
 
     @Override
     public Detective update(Detective o) {
-        Detective d = new Detective();
-        if(d.getPerson().equals(o.getPerson())){
-            o.setBadgeNumber(d.getBadgeNumber());
-            o.setRank(d.getRank());
-            o.setArmed(d.isArmed());
-            o.setStatus(d.getStatus());
-            o.setCriminalCase(d.getCriminalCase());
-            o.setTrackEntries(d.getTrackEntries());
+        for(Detective d : detectiveList){
+            if(d.getId() == o.getId()){
+                o.setPerson(d.getPerson());
+                o.setBadgeNumber(d.getBadgeNumber());
+                o.setRank(d.getRank());
+                o.setArmed(d.isArmed());
+                o.setStatus(d.getStatus());
+                o.setCriminalCase(d.getCriminalCase());
+                o.setTrackEntries(d.getTrackEntries());
+            }
         }
+
         return o;
     }
 
     @Override
-    public void delete(Detective code) {
-        detectiveList.removeIf(t->t.getPerson().equals(code.getPerson()));
+    public void delete(Long code) {
+        detectiveList.removeIf(t->t.getId() == code);
     }
 }

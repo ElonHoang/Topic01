@@ -5,7 +5,7 @@ import com.fis.enums.TrackAction;
 import java.time.LocalDateTime;
 import java.util.Objects;
 
-public class TrackEntry {
+public class TrackEntry extends AbstractEntity {
     private LocalDateTime date;
     private Evidence evidence;
     private Detective derevtive;
@@ -15,7 +15,9 @@ public class TrackEntry {
 
     }
 
-    public TrackEntry(LocalDateTime date, Evidence evidence, Detective derevtive, TrackAction action, String reason) {
+    public TrackEntry(Long id, int version, LocalDateTime date, Evidence evidence, Detective derevtive,
+                      TrackAction action, String reason) {
+        super(id,version);
         this.date = date;
         this.evidence = evidence;
         this.derevtive = derevtive;

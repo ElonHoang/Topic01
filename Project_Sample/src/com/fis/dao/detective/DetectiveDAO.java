@@ -8,5 +8,5 @@ public interface DetectiveDAO {
     public void add(Detective o);
     public List<Detective> getAll();
     public Detective update(Detective o);
-    public void delete(Detective code);
+    public void delete(Long code);
 }

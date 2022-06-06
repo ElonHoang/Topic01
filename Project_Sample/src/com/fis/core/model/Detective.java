@@ -6,7 +6,7 @@ import com.fis.enums.Rank;
 import java.util.Objects;
 import java.util.Set;
 
-public class Detective {
+public class Detective extends AbstractEntity {
     private Person person;
     private String badgeNumber;
     private Rank rank;
@@ -18,7 +18,9 @@ public class Detective {
     public Detective() {
     }
 
-    public Detective(Person person, String badgeNumber, Rank rank, boolean armed, EmployeeStatus status, Set<CriminalCase> criminalCase, Set<TrackEntry> trackEntries) {
+    public Detective(Long id, int version, Person person, String badgeNumber, Rank rank, boolean armed,
+                     EmployeeStatus status, Set<CriminalCase> criminalCase, Set<TrackEntry> trackEntries) {
+        super(id,version);
         this.person = person;
         this.badgeNumber = badgeNumber;
         this.rank = rank;
@@ -88,13 +90,14 @@ public class Detective {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (!(o instanceof Detective)) return false;
+        if (!super.equals(o)) return false;
         Detective detective = (Detective) o;
-        return armed == detective.armed && person.equals(detective.person) && badgeNumber.equals(detective.badgeNumber) && rank.equals(detective.rank) && status == detective.status && criminalCase.equals(detective.criminalCase) && trackEntries.equals(detective.trackEntries);
+        return armed == detective.armed && person.equals(detective.person) && badgeNumber.equals(detective.badgeNumber) && rank == detective.rank && status == detective.status && criminalCase.equals(detective.criminalCase) && trackEntries.equals(detective.trackEntries);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(person, badgeNumber, rank, armed, status, criminalCase, trackEntries);
+        return Objects.hash(super.hashCode(), person, badgeNumber, rank, armed, status, criminalCase, trackEntries);
     }
 
     @Override

@@ -3,7 +3,7 @@ package com.fis.core.model;
 import java.time.LocalDateTime;
 import java.util.Objects;
 
-public class Person {
+public class Person extends AbstractEntity {
     private String userName;
     private String firstName;
     private String lastName;
@@ -14,7 +14,9 @@ public class Person {
 
     }
 
-    public Person(String userName, String firstName, String lastName, String passWord, LocalDateTime hiringDate) {
+    public Person(Long id, int version, String userName, String firstName, String lastName, String passWord,
+                  LocalDateTime hiringDate) {
+        super(id,version);
         this.userName = userName;
         this.firstName = firstName;
         this.lastName = lastName;

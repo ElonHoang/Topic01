@@ -7,5 +7,5 @@ public interface EvidenceDAO {
     public void add(Evidence o);
     public List<Evidence> getAll();
     public Evidence update(Evidence o);
-    public void delete(Evidence code);
+    public void delete(Long code);
 }

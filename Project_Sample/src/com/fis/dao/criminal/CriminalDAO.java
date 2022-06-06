@@ -8,5 +8,5 @@ public interface CriminalDAO {
     public void add(CriminalCase o);
     public List<CriminalCase> getAll();
     public CriminalCase update(CriminalCase o);
-    public void delete(String code);
+    public void delete(Long code);
 }

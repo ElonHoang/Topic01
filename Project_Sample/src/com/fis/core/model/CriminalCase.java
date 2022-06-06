@@ -6,7 +6,7 @@ import com.fis.enums.CaseType;
 import java.util.Objects;
 import java.util.Set;
 
-public class CriminalCase {
+public class CriminalCase extends AbstractEntity {
     private String number;
     private CaseType type;
     private String shortDescription;
@@ -20,7 +20,10 @@ public class CriminalCase {
 
     }
 
-    public CriminalCase(String number, CaseType type, String shortDescription, String detailedDescription, CaseStatus status, String notes, Set<Evidence> evidenceSet, Detective leadInvestigator, Set<Detective> assigned) {
+    public CriminalCase(Long id, int version,String number, CaseType type, String shortDescription,
+                        String detailedDescription, CaseStatus status, String notes, Set<Evidence> evidenceSet
+                        , Detective leadInvestigator, Set<Detective> assigned) {
+        super(id,version);
         this.number = number;
         this.type = type;
         this.shortDescription = shortDescription;
@@ -108,13 +111,14 @@ public class CriminalCase {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (!(o instanceof CriminalCase)) return false;
+        if (!super.equals(o)) return false;
         CriminalCase that = (CriminalCase) o;
         return number.equals(that.number) && type == that.type && shortDescription.equals(that.shortDescription) && detailedDescription.equals(that.detailedDescription) && status == that.status && notes.equals(that.notes) && evidenceSet.equals(that.evidenceSet) && leadInvestigator.equals(that.leadInvestigator) && assigned.equals(that.assigned);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(number, type, shortDescription, detailedDescription, status, notes, evidenceSet, leadInvestigator, assigned);
+        return Objects.hash(super.hashCode(), number, type, shortDescription, detailedDescription, status, notes, evidenceSet, leadInvestigator, assigned);
     }
 
     @Override
