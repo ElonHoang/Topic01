@@ -1,7 +1,7 @@
 package com.fis.core.model;
 
-import com.fis.enums.CaseStatus;
-import com.fis.enums.CaseType;
+import com.fis.core.model.enums.CaseStatus;
+import com.fis.core.model.enums.CaseType;
 
 import java.util.Objects;
 import java.util.Set;

@@ -1,7 +1,7 @@
 package com.fis.core.model;
 
-import com.fis.enums.EmployeeStatus;
-import com.fis.enums.Rank;
+import com.fis.core.model.enums.EmployeeStatus;
+import com.fis.core.model.enums.Rank;
 
 import java.util.Objects;
 import java.util.Set;

@@ -1,6 +1,6 @@
 package com.fis.core.model;
 
-import com.fis.enums.TrackAction;
+import com.fis.core.model.enums.TrackAction;
 
 import java.time.LocalDateTime;
 import java.util.Objects;
