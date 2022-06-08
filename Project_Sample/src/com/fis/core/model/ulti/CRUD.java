@@ -1,18 +1,12 @@
 package com.fis.core.model.ulti;
 
-public class CRUD {
-   // List<Object<T>> list = new ArrayList<>();
-//    public void add(Object<T> o){
-//
-//    }
-//    public List<Object<T>>getAll(List<Object<T>> obj){
-//
-//        return ;
-//    };
-//    public Object<T> update(Object<T> o){
-//        return null;
-//    };
-//    public void delete(int code){
-//
-//    }
+import java.util.ArrayList;
+import java.util.List;
+
+public interface CRUD {
+    List<Object> list = new ArrayList<>();
+    public void add(Object o);
+    public List<Object>getAll(List<Object> obj);
+    public Object update(Object o);
+    public void delete(int code);
 }
