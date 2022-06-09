@@ -21,15 +21,15 @@ public class CriminalDAOMemImp implements  CriminalDAO{
     public CriminalCase update(CriminalCase o) {
         for(CriminalCase c : criminalCaseList){
             if(c.getId() == o.getId()){
-                o.setNumber(c.getNumber());
-                o.setType(c.getType());
-                o.setShortDescription(c.getShortDescription());
-                o.setDetailedDescription(c.getDetailedDescription());
-                o.setStatus(c.getStatus());
-                o.setNotes(c.getNotes());
-                o.setEvidenceSet(c.getEvidenceSet());
-                o.setLeadInvestigator(c.getLeadInvestigator());
-                o.setAssigned(c.getAssigned());
+                c.setNumber(o.getNumber());
+                c.setType(o.getType());
+                c.setShortDescription(o.getShortDescription());
+                c.setDetailedDescription(o.getDetailedDescription());
+                c.setStatus(o.getStatus());
+                c.setNotes(o.getNotes());
+                c.setEvidenceSet(o.getEvidenceSet());
+                c.setLeadInvestigator(o.getLeadInvestigator());
+                c.setAssigned(o.getAssigned());
             }
         }
 

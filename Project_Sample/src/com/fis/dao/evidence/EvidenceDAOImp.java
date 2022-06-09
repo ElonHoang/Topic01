@@ -21,13 +21,13 @@ public class EvidenceDAOImp implements  EvidenceDAO{
     public Evidence update(Evidence o) {
         for(Evidence e : evidenceList){
             if(e.getId() == o.getId()){
-                o.setCriminalCase(e.getCriminalCase());
-                o.setStorage(e.getStorage());
-                o.setNumber(e.getNumber());
-                o.setItemName(e.getItemName());
-                o.setNotes(e.getNotes());
-                o.setArchired(e.isArchired());
-                o.setTrackEntry(e.getTrackEntry());
+                e.setCriminalCase(o.getCriminalCase());
+                e.setStorage(o.getStorage());
+                e.setNumber(o.getNumber());
+                e.setItemName(o.getItemName());
+                e.setNotes(o.getNotes());
+                e.setArchired(o.isArchired());
+                e.setTrackEntry(o.getTrackEntry());
             }
         }
 
