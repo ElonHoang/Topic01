@@ -21,13 +21,13 @@ public class DetectiveDAOImp implements DetectiveDAO{
     public Detective update(Detective o) {
         for(Detective d : detectiveList){
             if(d.getId() == o.getId()){
-                o.setPerson(d.getPerson());
-                o.setBadgeNumber(d.getBadgeNumber());
-                o.setRank(d.getRank());
-                o.setArmed(d.isArmed());
-                o.setStatus(d.getStatus());
-                o.setCriminalCase(d.getCriminalCase());
-                o.setTrackEntries(d.getTrackEntries());
+                d.setPerson(o.getPerson());
+                d.setBadgeNumber(o.getBadgeNumber());
+                d.setRank(o.getRank());
+                d.setArmed(o.isArmed());
+                d.setStatus(o.getStatus());
+                d.setCriminalCase(o.getCriminalCase());
+                d.setTrackEntries(o.getTrackEntries());
             }
         }
 
