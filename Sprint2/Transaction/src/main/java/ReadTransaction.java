@@ -28,6 +28,7 @@ public class ReadTransaction {
     public static final int COLUMN_INDEX_MESSAGE = 3;
 
     public static final int COLUMN_INDEX_DATETIME = 4;
+    public static List<Transaction> tranList = new ArrayList<>();
 
     public static void main(String[] args) throws IOException {
         final String excelFilePath = "transaction_history.xlsx";
@@ -38,7 +39,7 @@ public class ReadTransaction {
     }
 
     public static List<Transaction> readExcel(String excelFilePath) throws IOException {
-        List<Transaction> listTrans = new ArrayList<>();
+        //List<Transaction> listTrans = new ArrayList<>();
 
         // Get file
         InputStream inputStream = new FileInputStream(new File(excelFilePath));
@@ -102,13 +103,14 @@ public class ReadTransaction {
                 }
 
             }
-            listTrans.add(tran);
+            //listTrans.add(tran);
+            tranList.add(tran);
         }
 
         workbook.close();
         inputStream.close();
 
-        return listTrans;
+        return tranList;
     }
 
     // Get Workbook
