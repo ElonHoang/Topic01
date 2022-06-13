@@ -1,0 +1,45 @@
+2022-06-13 07:43:46 DEBUG HikariPool-1 - configuration:
+2022-06-13 07:43:46 DEBUG allowPoolSuspension.............false
+2022-06-13 07:43:46 DEBUG autoCommit......................true
+2022-06-13 07:43:46 DEBUG catalog.........................none
+2022-06-13 07:43:46 DEBUG connectionInitSql...............none
+2022-06-13 07:43:46 DEBUG connectionTestQuery.............none
+2022-06-13 07:43:46 DEBUG connectionTimeout...............30000
+2022-06-13 07:43:46 DEBUG dataSource......................none
+2022-06-13 07:43:46 DEBUG dataSourceClassName.............none
+2022-06-13 07:43:46 DEBUG dataSourceJNDI..................none
+2022-06-13 07:43:46 DEBUG dataSourceProperties............{password=<masked>, prepStmtCacheSqlLimit=2048, cachePrepStmts=true, prepStmtCacheSize=250}
+2022-06-13 07:43:46 DEBUG driverClassName.................none
+2022-06-13 07:43:46 DEBUG exceptionOverrideClassName......none
+2022-06-13 07:43:46 DEBUG healthCheckProperties...........{}
+2022-06-13 07:43:46 DEBUG healthCheckRegistry.............none
+2022-06-13 07:43:46 DEBUG idleTimeout.....................600000
+2022-06-13 07:43:46 DEBUG initializationFailTimeout.......1
+2022-06-13 07:43:46 DEBUG isolateInternalQueries..........false
+2022-06-13 07:43:46 DEBUG jdbcUrl.........................jdbc:mysql://localhost:3306/evidence_db
+2022-06-13 07:43:46 DEBUG leakDetectionThreshold..........0
+2022-06-13 07:43:46 DEBUG maxLifetime.....................1800000
+2022-06-13 07:43:46 DEBUG maximumPoolSize.................10
+2022-06-13 07:43:46 DEBUG metricRegistry..................none
+2022-06-13 07:43:46 DEBUG metricsTrackerFactory...........none
+2022-06-13 07:43:46 DEBUG minimumIdle.....................10
+2022-06-13 07:43:46 DEBUG password........................<masked>
+2022-06-13 07:43:46 DEBUG poolName........................"HikariPool-1"
+2022-06-13 07:43:46 DEBUG readOnly........................false
+2022-06-13 07:43:46 DEBUG registerMbeans..................false
+2022-06-13 07:43:46 DEBUG scheduledExecutor...............none
+2022-06-13 07:43:46 DEBUG schema..........................none
+2022-06-13 07:43:46 DEBUG threadFactory...................internal
+2022-06-13 07:43:46 DEBUG transactionIsolation............default
+2022-06-13 07:43:46 DEBUG username........................"root"
+2022-06-13 07:43:46 DEBUG validationTimeout...............5000
+2022-06-13 07:43:46 INFO  HikariPool-1 - Starting...
+2022-06-13 07:43:46 DEBUG Loaded driver with class name com.mysql.cj.jdbc.Driver for jdbcUrl=jdbc:mysql://localhost:3306/evidence_db
+2022-06-13 07:43:47 DEBUG HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@616fe72b
+2022-06-13 07:43:47 INFO  HikariPool-1 - Start completed.
+2022-06-13 07:43:47 ERROR Cannot delete or update a parent row: a foreign key constraint fails (`evidence_db`.`trackentry`, CONSTRAINT `trackentry_ibfk_1` FOREIGN KEY (`evidenceId`) REFERENCES `evidence` (`id`))
+2022-06-13 07:43:47 DEBUG HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@20ea13c5
+2022-06-13 07:43:47 DEBUG HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@61d719fe
+2022-06-13 07:43:47 DEBUG HikariPool-1 - Pool stats (total=3, active=3, idle=0, waiting=1)
+2022-06-13 07:43:47 DEBUG HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@507c583d
+2022-06-13 07:43:47 DEBUG HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@1f8e6b1
