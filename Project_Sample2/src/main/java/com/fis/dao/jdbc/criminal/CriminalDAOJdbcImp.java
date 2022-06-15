@@ -118,7 +118,7 @@ public class CriminalDAOJdbcImp implements CriminalDAO {
     public void delete(Long id) {
         String sql = "DELETE FROM `criminal` WHERE `id` = ?";
         try(Connection con = Database.getConnection();
-            PreparedStatement stmt = con.prepareStatement(sql)){
+            PreparedStatement stmt = con.prepareStatement(sql);){
             stmt.setLong(1, id);
             int delete = stmt.executeUpdate();
             if (delete == 0) {

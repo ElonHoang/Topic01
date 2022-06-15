@@ -62,7 +62,7 @@ public class StorageDAOJdbcImp implements StorageDAO{
     public Storage getStorageById(long id) {
         Storage storage = new Storage();
         try(Connection con = Database.getConnection();
-        PreparedStatement stmt = con.prepareStatement("SELECT * FROM `storage` WHERE `id` = ?")){
+        PreparedStatement stmt = con.prepareStatement("SELECT * FROM `storage` WHERE `id` = ?");){
             stmt.setLong(1, id);
             ResultSet rs = stmt.executeQuery();
             if (rs.next()){
@@ -84,7 +84,7 @@ public class StorageDAOJdbcImp implements StorageDAO{
                 "`location` = ? " +
                 "WHERE `id` = ?";
         try(Connection con = Database.getConnection();
-            PreparedStatement stmt = con.prepareStatement(sql)){
+            PreparedStatement stmt = con.prepareStatement(sql);){
             stmt.setInt(1, o.getVersion());
             stmt.setString(2, o.getName());
             stmt.setString(3, o.getLocation());
@@ -105,7 +105,7 @@ public class StorageDAOJdbcImp implements StorageDAO{
     public void delete(Long id) {
         String sql = "DELETE FROM `storage` WHERE `id` = ?";
         try(Connection con = Database.getConnection();
-        PreparedStatement stmt = con.prepareStatement(sql)){
+        PreparedStatement stmt = con.prepareStatement(sql);){
             stmt.setLong(1, id);
             int delete = stmt.executeUpdate();
             if (delete == 0){

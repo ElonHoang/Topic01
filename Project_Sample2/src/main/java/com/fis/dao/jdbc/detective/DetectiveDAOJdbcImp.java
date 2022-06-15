@@ -64,7 +64,7 @@ public class DetectiveDAOJdbcImp implements DetectiveDAO {
         Detective det = new Detective();
         String sql = "SELECT * FROM detective WHERE `id` = ?";
         try (Connection con = Database.getConnection();
-             PreparedStatement stmt = con.prepareStatement(sql)) {
+             PreparedStatement stmt = con.prepareStatement(sql);) {
             stmt.setLong(1, id);
             ResultSet rs = stmt.executeQuery();
             if (rs.next()) {

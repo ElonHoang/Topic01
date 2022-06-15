@@ -48,7 +48,7 @@ public class PersonDAOJdbcImp implements PersonDAO{
         Person p = new Person();
         String sql = "SELECT * FROM person WHERE `id` = ?";
         try (Connection con = Database.getConnection();
-             PreparedStatement stmt = con.prepareStatement(sql)) {
+             PreparedStatement stmt = con.prepareStatement(sql);) {
             stmt.setLong(1, id);
             ResultSet rs = stmt.executeQuery();
             if (rs.next()) {
@@ -88,7 +88,7 @@ public class PersonDAOJdbcImp implements PersonDAO{
                 "`hiringDate` = ? " +
                 "WHERE `id` = ?";
         try(Connection con = Database.getConnection();
-            PreparedStatement stmt = con.prepareStatement(sql)){
+            PreparedStatement stmt = con.prepareStatement(sql);){
             stmt.setInt(1, o.getVersion());
             stmt.setString(2, o.getUserName());
             stmt.setString(3, o.getFirstName());

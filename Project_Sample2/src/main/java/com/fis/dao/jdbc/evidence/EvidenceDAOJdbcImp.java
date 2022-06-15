@@ -22,7 +22,7 @@ public class EvidenceDAOJdbcImp implements  EvidenceDAO{
         String sql = "INSERT INTO `evidence` (`id`, `version`, `criminalId`, `storageId`, `number`, `itemName`, `note`, `archired`) " +
                     "VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
         try(Connection con = Database.getConnection();
-            PreparedStatement stmt = con.prepareStatement(sql)
+            PreparedStatement stmt = con.prepareStatement(sql);
         ) {
             stmt.setLong(1, o.getId());
             stmt.setInt(2, o.getVersion());
@@ -61,7 +61,7 @@ public class EvidenceDAOJdbcImp implements  EvidenceDAO{
         Evidence e;
         String sql = "SELECT * FROM evidence WHERE id = ?";
         try (Connection con = Database.getConnection();
-        PreparedStatement stmt = con.prepareStatement(sql)){
+        PreparedStatement stmt = con.prepareStatement(sql);){
             stmt.setLong(1, id);
             ResultSet rs = stmt.executeQuery();
             if(rs.next()){
@@ -112,7 +112,7 @@ public class EvidenceDAOJdbcImp implements  EvidenceDAO{
     public void delete(Long id) {
         String sql = "DELETE FROM `evidence` WHERE `id` = ?";
         try(Connection con = Database.getConnection();
-            PreparedStatement stmt = con.prepareStatement(sql)){
+            PreparedStatement stmt = con.prepareStatement(sql);){
             stmt.setLong(1, id);
             int delete = stmt.executeUpdate();
             if (delete == 0){

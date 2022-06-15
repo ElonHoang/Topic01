@@ -74,7 +74,7 @@ public class TrackEntryDAOJdbcImp implements TrackEntryDAO{
                 "`reason` = ? " +
                 "WHERE `id` = ?";
         try(Connection con = Database.getConnection();
-            PreparedStatement stmt = con.prepareStatement(sql)){
+            PreparedStatement stmt = con.prepareStatement(sql);){
             stmt.setInt(1, o.getVersion());
             stmt.setDate(2, java.sql.Date.valueOf(o.getDate().toLocalDate()));
             stmt.setLong(3, o.getEvidence().getId());
@@ -98,7 +98,7 @@ public class TrackEntryDAOJdbcImp implements TrackEntryDAO{
     public void delete(Long id) {
         String sql = "DELETE FROM `trackentry` WHERE `id` = ?";
         try(Connection con = Database.getConnection();
-            PreparedStatement stmt = con.prepareStatement(sql)){
+            PreparedStatement stmt = con.prepareStatement(sql);){
             stmt.setLong(1, id);
             int delete = stmt.executeUpdate();
             if (delete == 0){
