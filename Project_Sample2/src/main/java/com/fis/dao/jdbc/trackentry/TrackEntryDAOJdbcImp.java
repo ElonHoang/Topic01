@@ -60,6 +60,19 @@ public class TrackEntryDAOJdbcImp implements TrackEntryDAO{
 
     @Override
     public TrackEntry getTrackEntryById(long id) {
+        TrackEntry trackEntry = new TrackEntry();
+        try(Connection con = Database.getConnection();
+            PreparedStatement stmt = con.prepareStatement("SELECT * FROM `trackentry` WHERE `id` = ?");){
+            stmt.setLong(1, id);
+            ResultSet rs = stmt.executeQuery();
+            if (rs.next()){
+                trackEntry = DBMapper.getTrackEntry(rs);
+                return trackEntry;
+            }
+        } catch (Exception ex){
+            logger.error(ex.getMessage());
+            return null;
+        }
         return null;
     }
 
